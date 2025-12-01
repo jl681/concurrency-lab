@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 200 # Web Server Threads
+
+spring:
+  application:
+    name: order-processing
+  threads:
+    virtual:
+      enabled: true # JAVA 21 MAGIC
+  datasource:
+    url: jdbc:postgresql://localhost:5432/concurrencylab
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20 # DB Constraint
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

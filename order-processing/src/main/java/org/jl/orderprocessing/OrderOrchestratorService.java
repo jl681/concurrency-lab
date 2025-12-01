@@ -96,7 +96,11 @@ public class OrderOrchestratorService {
     @Transactional
     protected void saveToOutbox(Order order) {
         // A background cron job will pick this up and retry sending to Kafka later
-        outboxRepo.save(new OutboxEvent("ORDER_CREATED", order.getId()));
+        outboxRepo.save(new OutboxEvent(
+                "orders-topic",
+                order.getId().toString(),
+                "ORDER_CREATED"
+        ));
     }
 
     /**
