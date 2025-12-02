@@ -1,4 +1,4 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.config;
 
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;

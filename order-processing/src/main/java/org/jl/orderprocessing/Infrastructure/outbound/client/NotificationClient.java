@@ -1,8 +1,9 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.outbound.client;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import lombok.AllArgsConstructor;
+import org.jl.orderprocessing.domain.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

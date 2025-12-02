@@ -1,4 +1,4 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.inbound.web.dto;
 
 import java.util.UUID;
 

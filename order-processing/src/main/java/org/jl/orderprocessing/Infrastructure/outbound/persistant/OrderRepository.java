@@ -1,6 +1,8 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.outbound.persistant;
 
 
+import org.jl.orderprocessing.domain.Order;
+import org.jl.orderprocessing.domain.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

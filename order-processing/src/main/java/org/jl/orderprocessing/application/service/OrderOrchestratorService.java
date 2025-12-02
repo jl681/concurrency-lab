@@ -1,8 +1,15 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.application.service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jl.orderprocessing.Infrastructure.inbound.web.dto.OrderRequest;
+import org.jl.orderprocessing.Infrastructure.outbound.client.NotificationClient;
+import org.jl.orderprocessing.Infrastructure.outbound.persistant.OrderRepository;
+import org.jl.orderprocessing.Infrastructure.outbound.persistant.OutboxRepository;
+import org.jl.orderprocessing.domain.Order;
+import org.jl.orderprocessing.domain.OrderStatus;
+import org.jl.orderprocessing.domain.OutboxEvent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +31,7 @@ public class OrderOrchestratorService {
 
     // Java 21: Virtual Thread Executor for high concurrency I/O
     private final ExecutorService ioExecutor = Executors.newVirtualThreadPerTaskExecutor();
+
 
     public void processOrder(OrderRequest request) {
         // STEP 1: Local ACID Transaction (Fast)

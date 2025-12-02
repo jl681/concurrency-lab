@@ -1,5 +1,7 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.inbound.web;
 
+import org.jl.orderprocessing.Infrastructure.inbound.web.dto.OrderRequest;
+import org.jl.orderprocessing.application.service.OrderOrchestratorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.domain;
 
 public enum OrderStatus {
     PENDING,

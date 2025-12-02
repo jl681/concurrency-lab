@@ -1,4 +1,4 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.Infrastructure.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;

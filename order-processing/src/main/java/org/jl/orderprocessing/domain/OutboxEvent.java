@@ -1,11 +1,10 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "outbox_events")

@@ -1,9 +1,11 @@
-package org.jl.orderprocessing;
+package org.jl.orderprocessing.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jl.orderprocessing.Infrastructure.inbound.web.dto.OrderRequest;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
